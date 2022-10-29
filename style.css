@@ -1,0 +1,12 @@
+.square {
+    border: 1px solid gray;
+    min-width: 40px;
+    min-height: 40px;
+    display: inline-block;
+    margin: 0 0;
+}
+
+.row {
+    margin-bottom: -5px;
+    border-collapse: collapse;
+}
