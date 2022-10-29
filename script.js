@@ -3,6 +3,7 @@
 function promptInput(){
     var val = Number(window.prompt("How large do you want the grid to be? (Max is 100x100)", "20"))
     if(val <= 100 && val > 0){
+        val = Math.floor(val)
         document.getElementById("container").innerHTML= '';
         createSquare(val)
     } else {
