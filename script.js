@@ -2,8 +2,12 @@
 
 function promptInput(){
     var val = Number(window.prompt("How large do you want the grid to be? (Max is 100x100)", "20"))
-    document.getElementById("container").innerHTML= '';
-    createSquare(val)
+    if(val <= 100 && val > 0){
+        document.getElementById("container").innerHTML= '';
+        createSquare(val)
+    } else {
+        alert('Please enter a valid number!')
+    }
 }
 
 function createSquare(val = 16){
