@@ -1,5 +1,3 @@
-
-
 function promptInput(){
     var val = Number(window.prompt("How large do you want the grid to be? (Max is 100x100)", "20"))
     if(val <= 100 && val > 0){
@@ -25,6 +23,7 @@ function createSquare(val = 16){
         for (j = 0; j < val; j++){
             var sqr = document.createElement("div");
             sqr.setAttribute('class','square');
+            sqr.setAttribute('id', `${i}-${j}`)
             sqr.style.width = size + 'px'
             sqr.style.height = (size - 2)  + 'px'
             row.appendChild(sqr);
@@ -33,3 +32,11 @@ function createSquare(val = 16){
 }
 
 createSquare()
+
+document.addEventListener('mousedown', event =>{
+    color = document.getElementById('colorpicker').value;
+    if (event.target.className == "square"){
+        event.target.style.backgroundColor = color;
+    }
+
+})
